@@ -1,0 +1,21 @@
+ls -la /etc
+ls -la /proc
+ls -la /home
+cat >file1
+cat >file2
+cat file1 file2 > file3
+cat file3
+mv file3 file4
+touch book{00..20}.txt
+mkdir books
+mv book{00..20}.txt books
+rm -rf books
+rm -rf file*
+ls -la | grep "^-" | grep " \."|wc -l
+cat /etc/* 2 > etc.err
+cat etc.err |wc -l
+ps -eF | grep "mc"
+sudo kill -9 3165 //процесс завершился
+sudo kill -24 3235 //превышен лимит процессорного времени
+sudo kill -26 3328 //виртуальный таймер истек
+ls -la | cut -d " " -f1| grep -v "итого"|uniq|wc -l
