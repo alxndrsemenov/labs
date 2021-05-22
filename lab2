@@ -18,4 +18,5 @@ ps -eF | grep "mc"
 sudo kill -9 3165 //процесс завершился
 sudo kill -24 3235 //превышен лимит процессорного времени
 sudo kill -26 3328 //виртуальный таймер истек
-ls -la | cut -d " " -f1| grep -v "итого"|uniq|wc -l
+ls -la | grep -v -w '\.'| cut -d " " -f1 | grep -v "итого" | uniq | wc -l
+
