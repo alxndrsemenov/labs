@@ -1,0 +1,34 @@
+vim file1
+cp file1 file2
+ln -s file1 file3
+ln file1 file4
+ls -ila
+rm file1
+файлы остались, символическая ссылка поменяла цвет. file2 остался, cat file3 говорит нет такого файла или каталога, cat file4 выводит содержимое как оригинального file1
+mv file2 file22
+mv file4 file44
+ls -s file22 file33
+mv file33 dir1
+echo test > file5
+echo test2 > file6
+sudo chown 664 file5
+sudo chmod u+rw-x,g+rw-x,o-rwx file5
+sudo chmod 600 file6
+sudo chmod u+rw-x,g-rwx,o-rwx file6
+sudo useradd -g sudo -m -p password user3
+groupadd developer
+useradd -m -G developer -s /bin/bash semenov
+useradd -m -G developer -s /bin/bash saunin
+mkdir /home/developer
+chmod 770 /home/developer
+sudo chown -R user:developer /home/developer
+cd /home/developer
+mkdir exchange
+sudo chmod 1660 exchange/
+mkdir filelist
+cd filelist/
+echo test > file1
+echo test2 > file2
+chmod 660 file1
+chmod 660 file2
+sudo chmod g=x filelist
