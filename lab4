@@ -1,0 +1,23 @@
+#первый скрипт remempt.sh
+#!/bin/bash
+INPUT=$1
+OUTPUT=$2
+rm -rf $OUTPUT
+cat $INPUT| tr [a-z] [A-Z] >> $OUTPUT
+sed -i '/^$/d' $OUTPUT
+
+#второй скрипт dircr.sh
+#!/bin/bash
+for i in {2000..2017}
+do
+          for j in {00..12}
+          do
+                  mkdir -p $i/$j && echo 'Файл'0$j >> $i/$j/$j.txt
+          done
+done
+
+#третий скрипт
+crontab -u root -e
+30 10 * * * du -sh /home/*
+
+#четвертый скрипт
