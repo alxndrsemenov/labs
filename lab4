@@ -20,4 +20,15 @@ done
 crontab -u root -e
 30 10 * * * du -sh /home/*
 
-#четвертый скрипт
+#четвертый скрипт ownersort.sh
+#!/bin/bash
+path=/home/developer/fileshare
+cd $path
+for file in *
+do
+        if [ -e $file ]
+        then
+                username='ls -l $file|grep '^-'|awk {'print $3'}'
+                cp $file $path/$owner
+        fi
+done
